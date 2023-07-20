@@ -1,0 +1,17 @@
+/* src/components/FilaDeProcessos.css */
+
+.fila-de-processos {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+  
+  .itens-fila {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
