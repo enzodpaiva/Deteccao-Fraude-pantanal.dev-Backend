@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
-import logo from "../assets/b3-logo.png";
+import BellIcon from "./BellIcon";
+import logo from "../assets/data_wizard_logo.png";
 
 const Header = () => {
   return (
@@ -9,7 +10,10 @@ const Header = () => {
         <img src={logo} alt="Logo" width="100" height="100"/>
       </div>
       <div className="title" >
-        Onça Pintada
+        Data Wizard
+      </div>
+      <div className="warnings">
+        <BellIcon />
       </div>
     </div>
   );

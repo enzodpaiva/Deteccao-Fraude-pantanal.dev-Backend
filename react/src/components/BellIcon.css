@@ -1,0 +1,38 @@
+/* BellIcon.css */
+
+.bell-icon-container {
+    position: absolute;
+    left: auto;
+    right: 20px;
+    top: 0;
+    transform: translateY(50%);
+  }
+  
+  .bell-icon {
+    width: 50px;
+    height: 50px;
+    fill: #333; /* Cor do ícone do sino */
+  }
+
+  .bell-icon:hover {
+    cursor: pointer;
+    background-color: #333;
+  }
+  
+  .notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff3b30; /* Cor de fundo da notificação (vermelho) */
+    color: #fff; /* Cor do texto da notificação (branco) */
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
