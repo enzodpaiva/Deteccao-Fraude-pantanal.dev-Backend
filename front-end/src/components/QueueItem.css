@@ -1,0 +1,19 @@
+/* src/components/ItemFila.css */
+
+.item-fila {
+    width: 200px;
+    height: 100px;
+    background-color: #007bff;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .item-info {
+    text-align: center;
+    font-size: 14px;
+  }
+  

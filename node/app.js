@@ -12,6 +12,8 @@ app.use(cors());
 
 
 let linhasAleatorias = [];
+let quantidadeFraudes = 0;
+let Frauds = [];
 
 // Função para ler o arquivo CSV e armazenar as linhas aleatórias em uma variável global
 const carregarLinhasAleatorias = () => {
@@ -37,11 +39,17 @@ app.get('/transacoes', (req, res) => {
 
     axios.post('http://localhost:5500/classify', linhaAleatoriaArray)
       .then((response) => {
-        console.log('Resposta da porta 5500:', response.data);
+        // console.log('Resposta da porta 5500:', response.data);
   
         Object.keys(linhaAleatoria).forEach((key) => {
           linhaAleatoria[key] = parseFloat(linhaAleatoria[key]);
         });
+        if(response.data == 1){
+          quantidadeFraudes += 1;
+          Frauds.push(new Fraud(quantidadeFraudes, linhaAleatoria));
+          console.log(Frauds);
+        } 
+        
         linhaAleatoria.Time = moment(linhaAleatoria.Time * 1000).format('HH:mm:ss');
         linhaAleatoria.Class = response.data;
   
@@ -52,7 +60,12 @@ app.get('/transacoes', (req, res) => {
         res.status(500).json({ error: 'Erro ao enviar a linha para a porta 5500' });
       });
   });
+
+app.get('/quantidade-fraudes', (req, res) => {
+    res.json({ quantidadeFraudes });
+});
   
+
 carregarLinhasAleatorias().then(() => {
 // Inicia o servidor na porta definida
 app.listen(PORT, () => {
