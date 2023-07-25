@@ -1,0 +1,18 @@
+service: "service:fraud_detection"
+labels:
+   owner: bentoml-team
+   stage: dev
+include:
+  - service.py
+  - credit_card_transactions.db
+  - sample_analysis.py
+python:
+  packages:
+    - scikit-learn==1.2.2
+    - pandas
+    - cchardet
+    - numpy
+    - pickle5
+    - streamlit
+    - seaborn
+
