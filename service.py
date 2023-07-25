@@ -39,15 +39,12 @@ def sample_view(sample) -> dict:
     subprocess.Popen(["streamlit", "run", "--browser.serverAddress", "localhost", "--server.port", str(app_port), "sample_analysis.py", "--", "--transaction_values", *values])
     return {"url": f"http://localhost:{app_port}"}
 
+@fraud_detection.api(input=JSON(), output=JSON(), route="/add-fraud")
+def add_fraud(transaction) -> dict:
+    conn = sqlite3.connect('credit_card_transactions.db')
+    cursor = conn.cursor()
+    execution = cursor.execute('''INSERT INTO transactions (Time, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10, V11, V12, V13, V14, V15, V16, V17, V18, V19, V20, V21, V22, V23, V24, V25, V26, V27, V28, Amount, Class) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',(transaction['Time'], transaction['V1'], transaction['V2'], transaction['V3'], transaction['V4'], transaction['V5'], transaction['V6'], transaction['V7'], transaction['V8'], transaction['V9'],transaction['V10'], transaction['V11'], transaction['V12'], transaction['V13'], transaction['V14'], transaction['V15'], transaction['V16'], transaction['V17'], transaction['V18'],transaction['V19'], transaction['V20'], transaction['V21'], transaction['V22'], transaction['V23'], transaction['V24'], transaction['V25'], transaction['V26'], transaction['V27'],transaction['V28'], transaction['Amount'], transaction['Class']))
+    conn.commit()
+    conn.close()
 
-# from flask import Flask
-
-# app = Flask(__name__)
-
-# # Rota para transaction sample
-# @app.route('/transaction-sample' , methods=['POST'])
-# def transaction_sample():
-#     return "Esta é uma mensagem de exemplo."
-
-# if __name__ == "__main__":
-#     app.run(port=5500, debug=True)
+    return {"status": True} if execution else {"status": False}
