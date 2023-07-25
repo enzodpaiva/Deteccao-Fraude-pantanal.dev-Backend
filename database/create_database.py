@@ -59,7 +59,7 @@ def insert_data_into_table():
             ''', (row['Time'], row['V1'], row['V2'], row['V3'], row['V4'], row['V5'], row['V6'], row['V7'], row['V8'], row['V9'],
                   row['V10'], row['V11'], row['V12'], row['V13'], row['V14'], row['V15'], row['V16'], row['V17'], row['V18'],
                   row['V19'], row['V20'], row['V21'], row['V22'], row['V23'], row['V24'], row['V25'], row['V26'], row['V27'],
-                  row['V28'], row['Amount'], row['Class']))
+                  row['V28'], row['Amount'], row['Class'], row['ID'], row['ID']))
 
     conn.commit()
     conn.close()

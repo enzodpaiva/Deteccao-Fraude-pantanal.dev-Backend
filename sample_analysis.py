@@ -3,6 +3,7 @@ import pandas as pd
 import seaborn as sns
 from matplotlib import pyplot as plt
 import sqlite3
+import argparse
 
 def violin(data_frame):
     column = st.select_slider('Selecione a variável que se deseja analisar', options=data_frame.columns)
@@ -36,14 +37,15 @@ def data_visualization(data_frame):
     else:
         st.write("Opção não implementada")
     
-def main():
-    conn = sqlite3.connect('../database/credit_card_transactions.db')
+def main(values):
+    conn = sqlite3.connect('credit_card_transactions.db')
     cursor = conn.cursor()
 
-    random_example = cursor.execute('''SELECT * FROM transactions LIMIT 1''')
-    random_example_dataframe = pd.DataFrame(random_example.fetchall(), columns=["Time", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10", "V11", "V12", "V13", "V14", "V15", "V16", "V17", "V18", "V19", "V20", "V21", "V22", "V23", "V24", "V25", "V26", "V27", "V28", "Amount", "Class"])
+    # random_example = cursor.execute('''SELECT * FROM transactions LIMIT 1''')
+    values = [float(value) for value in values]
+    random_example_dataframe = pd.DataFrame([values], columns=["Time", "V1", "V2", "V3", "V4", "V5", "V6", "V7","V8", "V9", "V10", "V11", "V12", "V13", "V14", "V15","V16", "V17", "V18", "V19", "V20", "V21", "V22", "V23","V24", "V25", "V26", "V27", "V28", "Amount", "Class"])
     random_example_dataframe['Class'] = 'Amostra'
-
+    
     random_fraud_rows = cursor.execute('''SELECT * FROM transactions WHERE Class=1 ORDER BY RANDOM() LIMIT 300''')
     fraud_dataframe = pd.DataFrame(random_fraud_rows.fetchall(), columns=["Time", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10", "V11", "V12", "V13", "V14", "V15", "V16", "V17", "V18", "V19", "V20", "V21", "V22", "V23", "V24", "V25", "V26", "V27", "V28", "Amount", "Class"])
     fraud_dataframe['Class'] = 'Fraude'
@@ -61,5 +63,15 @@ def main():
     data_frame["Class"] = data_frame["Class"].astype("str")
     data_visualization(data_frame)
 
+def argparser():
+    parser = argparse.ArgumentParser(description='Data Wizard')
+    parser.add_argument("--transaction_values", nargs="+", type=lambda x: float(x) if "." in x else x, help="List argument for the app")
+    args = parser.parse_args()
+    return args
+
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description='Data Wizard')
+    parser.add_argument("--transaction_values", nargs="+", type=lambda x: float(x) if "." in x else x, help="List argument for the app")
+    args = parser.parse_args()
+
+    main(args.transaction_values)

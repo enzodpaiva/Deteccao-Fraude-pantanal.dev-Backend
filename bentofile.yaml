@@ -3,7 +3,9 @@ labels:
    owner: bentoml-team
    stage: dev
 include:
-- "*.py"  # A pattern for matching which files to include in the bento
+  - service.py
+  - credit_card_transactions.db
+  - sample_analysis.py
 python:
   packages:
     - scikit-learn==1.2.2
@@ -11,5 +13,6 @@ python:
     - cchardet
     - numpy
     - pickle5
-
+    - streamlit
+    - seaborn
 
