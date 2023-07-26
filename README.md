@@ -32,11 +32,11 @@
 
 ## Manipulações do Dataset
 
-:heavy_check_mark: Dataset utilizado: 
+Dataset utilizado: 
 
 [Keggle - Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) 
 
-:heavy_check_mark: Manipulações aplicadas:
+Manipulações aplicadas:
 
 - Log10 sobre os valores
 - Distribuição das transações de acordo com dia/hora/minuto
