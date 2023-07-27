@@ -5,6 +5,7 @@ import bentoml
 from bentoml.io import NumpyNdarray, JSON
 from streamlit.web import cli as stcli
 import random
+import socket
 
 fraud_detection_runner = bentoml.sklearn.get("fraud_detection_tree:latest").to_runner()
 fraud_detection = bentoml.Service("credit_card_fraud_detection", runners=[fraud_detection_runner])
@@ -36,8 +37,10 @@ def sample_view(sample) -> dict:
 
     values = [str(value) for value in sample.values()]
 
-    subprocess.Popen(["streamlit", "run", "--browser.serverAddress", "localhost", "--server.port", str(app_port), "sample_analysis.py", "--", "--transaction_values", *values])
-    return {"url": f"http://localhost:{app_port}"}
+    server_ip = socket.gethostbyname(socket.gethostname())  # Obtém o endereço IP do servidor
+
+    subprocess.Popen(["streamlit", "run", "--browser.serverAddress", server_ip, "--server.port", str(app_port), "sample_analysis.py", "--", "--transaction_values", *values])
+    return {"url": f"http://{server_ip}:{app_port}"}
 
 @fraud_detection.api(input=JSON(), output=JSON(), route="/add-fraud")
 def add_fraud(transaction) -> dict:
