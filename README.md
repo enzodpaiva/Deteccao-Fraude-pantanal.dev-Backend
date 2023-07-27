@@ -1,15 +1,18 @@
 <div style="display: flex; align-items: center;">
-  <img src="public/data_wizard_logo.png" alt="Data Wizard Logo" width="100" height="100" align="left">
-  <h1>Data Wizard - Front-end</h1>
+  <img src="data_wizard_logo.png" alt="Data Wizard Logo" width="100" height="100" align="left">
+  <h1>Data Wizard - Servidor</h1>
 </div>
 
 <p align="center">
 
   <img alt="GitHub" src="https://img.shields.io/static/v1?label=GitHub&message=deploy&color=blue&style=for-the-badge&logo=github"/>
 <img alt="Python" src="https://img.shields.io/static/v1?label=Python&message=3.10&color=blue&style=for-the-badge&logo=python"/>
+<img alt="BentoML" src="https://img.shields.io/static/v1?label=BentoML&message=1.1.0&color=blue&style=for-the-badge&logo=python"/>
+
   <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge"/>
   <img src="http://img.shields.io/static/v1?label=TESTES&message=%3E100&color=GREEN&style=for-the-badge"/>
    <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
+   
 </p>
 
 ### Tópicos 
@@ -26,7 +29,11 @@
 ## Descrição do projeto 
 
 <p align="justify">
-    O dataset foi analisado profundamente, e à partir dele foram feitas manipulações nos dados para que fossem utilizados apenas parâmetros adequados no treinamento dos modelos.
+  O projeto visa detecção de fraudes e tem como objetivo identificar atividades ou padrões não usuais (incomuns). Como por exemplo, falsificação de assinaturas em cheques, clonagem de cartões de crédito, lavagem de dinheiro, declarar falência propositalmente (bankruptcy), etc.
+</p>
+
+<p align="justify">
+    O servidor é responsavel por analisar o dataset profundamente, e à partir dele foram feitas manipulações nos dados para que fossem utilizados apenas parâmetros adequados no treinamento dos modelos.
     Analisamos variados modelos para detecção de fraude e em cada um foram poderados seus pontos fortes e pontos fracos. Os modelos são então utilizados pelo frontend por chamadas.
 </p>
 
