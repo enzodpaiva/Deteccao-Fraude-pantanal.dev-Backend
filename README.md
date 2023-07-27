@@ -101,8 +101,6 @@ Métrica altamente ilustrativa da qualidade do modelo para esta aplicação por 
 
 ## Futuras melhorias que almejamos implementar
 
-:memo: Permitir visualizar relatorio das fraudes computadas.
-
 :memo: Possibilidade de pesquisar fraudes que ocorreram no passado.
 
 :memo: Implementar autenticação e controle de acesso para garantir a segurança dos usuários. 
