@@ -99,6 +99,24 @@ Métrica altamente ilustrativa da qualidade do modelo para esta aplicação por 
 - [Matplotlib](https://matplotlib.org/)
 - [Keggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) 
 
+## Futuras melhorias que almejamos implementar
+
+:memo: Permitir visualizar relatorio das fraudes computadas.
+
+:memo: Possibilidade de pesquisar fraudes que ocorreram no passado.
+
+:memo: Implementar autenticação e controle de acesso para garantir a segurança dos usuários. 
+
+:memo: Adicionar suporte a diferentes tipos de fontes de dados para a detecção de fraudes, como feeds de redes sociais, dados de transações financeiras adicionais, etc.
+
+:memo: Integrar a aplicação com serviços de notificação por e-mail ou mensagens para alertar os usuários sobre atividades suspeitas.
+
+:memo: Implementar um sistema de feedback dos usuários para coletar sugestões e melhorar continuamente a aplicação.
+
+:memo: Realizar testes rigorosos de desempenho para garantir que a aplicação possa lidar com grandes volumes de dados de forma eficiente.
+
+:memo: Integrar a aplicação com sistemas de terceiros, como bancos de dados, para obter informações adicionais para análise de fraudes.
+
 ## Desenvolvedores
 
 | [<img src="https://github.com/enzodpaiva.png?size=460u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Enzo Paiva</sub>](https://github.com/enzodpaiva) |  [<img src="https://github.com/AlexandreSh.png?size=460&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Alexandre Shimizu</sub>](https://github.com/AlexandreSh) |  [<img src="https://github.com/edu010101.png?size=460&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Eduardo Lopes</sub>](https://github.com/edu010101) | [<img src="https://github.com/TuskNinja.png?size=460&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Vitor Yuske</sub>](https://github.com/TuskNinja) |
