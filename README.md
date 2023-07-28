@@ -11,7 +11,7 @@
 
   <img src="http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge"/>
   <img src="http://img.shields.io/static/v1?label=TESTES&message=%3E100&color=GREEN&style=for-the-badge"/>
-   <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
+   <img src="http://img.shields.io/static/v1?label=VERSAO&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
    
 </p>
 
@@ -54,8 +54,6 @@ Manipulações aplicadas:
 
 - Árvores de decisão de profundidade 3, 4 e 5
 - XGBoost
-- Redes Neurais
-
 
 ## Métricas Utilizadas
 
