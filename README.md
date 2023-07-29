@@ -42,7 +42,7 @@
 ##### No terminal, clone o projeto: 
 
 ```
-git clone git@github.com:enzodpaiva/Deteccao-Fraude-pantanal.dev-API.git
+git clone git@github.com:enzodpaiva/Deteccao-Fraude-pantanal.dev-Backend.git
 ```
 ##### Criar .env na raiz do projeto a partir do .env.example
 ```bash 
