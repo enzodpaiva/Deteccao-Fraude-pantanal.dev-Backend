@@ -37,6 +37,29 @@
     Analisamos variados modelos para detecção de fraude e em cada um foram poderados seus pontos fortes e pontos fracos. Os modelos são então utilizados pelo frontend por chamadas.
 </p>
 
+## Como rodar a aplicação :arrow_forward:
+
+##### No terminal, clone o projeto: 
+
+```
+git clone git@github.com:enzodpaiva/Deteccao-Fraude-pantanal.dev-API.git
+```
+##### Criar .env na raiz do projeto a partir do .env.example
+```bash 
+rodar as instruções no tutorial.ipynb
+```
+
+##### Executar aplicação através do Docker na network da API
+
+```bash 
+docker run --rm -p 3000:3000 --network deteccao-fraude-pantanaldev-api_fraud_network credit_card_fraud_detection:zyieiornuowrafis
+```
+##### Derrubar aplicação através do Docker
+
+```bash 
+ctrl+c
+``` 
+
 ## Manipulações do Dataset
 
 Dataset utilizado: 
