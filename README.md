@@ -119,7 +119,7 @@ Highly illustrative metric of model quality for this application as it normalize
 - [Matplotlib](https://matplotlib.org/)
 - [Keggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) 
 
-## Futuras melhorias que almejamos implementar
+## Future Improvements We Aim to Implement
 
 :memo: Possibility to search for past frauds.
 
