@@ -1,6 +1,6 @@
 <div style="display: flex; align-items: center;">
   <img src="data_wizard_logo.png" alt="Data Wizard Logo" width="100" height="100" align="left">
-  <h1>Data Wizard - Servidor</h1>
+  <h1>Data Wizard - Server</h1>
 </div>
 
 <p align="center">
@@ -15,100 +15,99 @@
    
 </p>
 
-### Tópicos 
-:small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)
+### Topics 
+:small_blue_diamond: [Project Description](#project-description)
 
-:small_blue_diamond: [Manipulações do Dataset](#manipulações-do-dataset)
+:small_blue_diamond: [Dataset Manipulation](#dataset-manipulation)
 
-:small_blue_diamond: [Modelos Analisados](#modelos-analisados)
+:small_blue_diamond: [Analyzed Models](#analyzed-models)
 
-:small_blue_diamond: [Métricas Utilizadas](#metricas-utilizadas)
+:small_blue_diamond: [Used Metrics](#used-metrics)
 
-:small_blue_diamond: [Insights Obtidos na Análise](#insights-obtidos-na-analise)
+:small_blue_diamond: [Insights from Analysis](#insights-from-analysis)
 
-## Descrição do projeto 
+## Project Description 
 
 <p align="justify">
-  O projeto visa detecção de fraudes e tem como objetivo identificar atividades ou padrões não usuais (incomuns). Como por exemplo, falsificação de assinaturas em cheques, clonagem de cartões de crédito, lavagem de dinheiro, declarar falência propositalmente (bankruptcy), etc.
+  The project aims to detect frauds and its goal is to identify unusual activities or patterns. For example, check signature forgery, credit card cloning, money laundering, intentional bankruptcy declaration, etc.
 </p>
 
 <p align="justify">
-    O servidor é responsavel por analisar o dataset profundamente, e à partir dele foram feitas manipulações nos dados para que fossem utilizados apenas parâmetros adequados no treinamento dos modelos.
-    Analisamos variados modelos para detecção de fraude e em cada um foram poderados seus pontos fortes e pontos fracos. Os modelos são então utilizados pelo frontend por chamadas.
+    The server is responsible for analyzing the dataset deeply, and from it, data manipulations were made to use only appropriate parameters in model training. We analyzed various fraud detection models, and each one had its strengths and weaknesses weighted. The models are then used by the frontend through calls.
 </p>
 
-## Como rodar a aplicação :arrow_forward:
+## How to Run the Application :arrow_forward:
 
-##### No terminal, clone o projeto: 
+##### In the terminal, clone the project:
 
 ```
 git clone git@github.com:enzodpaiva/Deteccao-Fraude-pantanal.dev-Backend.git
 ```
-##### Criar .env na raiz do projeto a partir do .env.example
+##### Create a .env file in the project root based on .env.example
 ```bash 
-rodar as instruções no tutorial.ipynb
+Run the instructions in the tutorial.ipynb
 ```
 
-##### Executar aplicação através do Docker na network da API
+##### Run the application using Docker on the API network
 
 ```bash 
 docker run --rm -p 3000:3000 --network deteccao-fraude-pantanaldev-api_fraud_network credit_card_fraud_detection:zyieiornuowrafis
 ```
-##### Derrubar aplicação através do Docker
+##### Shutdown the application using Docker
 
 ```bash 
 ctrl+c
 ``` 
 
-## Manipulações do Dataset
+## Dataset Manipulation
 
-Dataset utilizado: 
+Dataset used: 
 
 [Keggle - Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) 
 
-Manipulações aplicadas:
+Applied manipulations:
 
-- Log10 sobre os valores
-- Distribuição das transações de acordo com dia/hora/minuto
-- Poda de atributos pouco importantes de acordo com sua [Análise de Variação](https://blog.minitab.com/en/adventures-in-statistics-2/understanding-analysis-of-variance-anova-and-the-f-test)
-- Todos os modelos foram treinados e analisados com 30, 25 e 20 atributos, com under ou over sampling ou com SMOTE
+Log10 on values
+Distribution of transactions according to day/hour/minute
+Pruning of unimportant attributes based on their [Analysis of Variation](https://blog.minitab.com/en/adventures-in-statistics-2/understanding-analysis-of-variance-anova-and-the-f-test)
+All models were trained and analyzed with 30, 25, and 20 attributes, with under or over-sampling, or with SMOTE.
 
-## Modelos Analisados
+## Analyzed Models
 
-- Árvores de decisão de profundidade 3, 4 e 5
+- Decision trees with depths 3, 4, and 5
 - XGBoost
 
-## Métricas Utilizadas
+## Used Metrics
 
-- Precisão
-- Revocação
-- Especifidade
-- Pontuação F1
-- Média Geométrica
-
-
-## Insights Obtidos na Análise
-### Modelos :
-Redes neurais, especialmente as mais profundas conseguem ter melhores métricas, mas por conta de sua complexidade e características de caixa-preta são especialmente desafiadoras ao análisar e relatar como e por que é realisada a classificação de determinada transação.
-
-Árvores de decisão em contrapartida são de fácil análise e explicação, e quando aplicadas em métodos conjuntos como o do XGBoost conseguém alcançar métricas comparáveis às das redes neurais.
-
-### Métricas:
-
-#### Precisão
-Por conta do desbalanceamento do dataset trata-se de uma métrica pouco ilustrativa da qualidade dos modelos.
-
-#### Revocação e Especifidade
-Métricas altamente ilustrativas da qualidade do modelo para esta aplicação por análisar cada grupo de classificação individualmente, assim contornando o desbalanceamento da composição dos grupos. 
-
-#### Pontuação F1
-Baixa representatividade da qualidade do modelo para datasets desbalanceados por conta de sua composição com a precisão como um dos componentes.
-
-#### Média Geométrica
-Métrica altamente ilustrativa da qualidade do modelo para esta aplicação por normalizar o desbalanceamento entre diferentes grupos antes de avaliar a qualidade do modelo.
+- Precision
+- Recall
+- Specificity
+- F1 Score
+- Geometric Mean
 
 
-## Linguagens, dependencias e libs utilizadas :books:
+## Insights from Analysis
+### Models :
+Neural networks, especially deeper ones, can achieve better metrics, but due to their complexity and black-box nature, they are particularly challenging to analyze and explain how and why a particular transaction is classified.
+
+On the other hand, decision trees are easy to analyze and explain, and when applied in ensemble methods like XGBoost, they can achieve metrics comparable to those of neural networks.
+
+### Metrics:
+
+### Precision
+Due to the dataset's imbalance, it is a less illustrative metric of model quality.
+
+### Recall and Specificity
+Highly illustrative metrics of model quality for this application as they analyze each classification group individually, thus addressing the imbalance in group composition.
+
+### F1 Score
+Low representativeness of model quality for imbalanced datasets due to its composition with precision as one of the components.
+
+### Geometric Mean
+Highly illustrative metric of model quality for this application as it normalizes the imbalance between different groups before evaluating model quality.
+
+
+## Languages, Dependencies, and Libraries Used :books:
 
 - [SKLearn](https://scikit-learn.org/stable/)
 - [IMBLearn](https://imbalanced-learn.org/stable/)
@@ -122,21 +121,21 @@ Métrica altamente ilustrativa da qualidade do modelo para esta aplicação por 
 
 ## Futuras melhorias que almejamos implementar
 
-:memo: Possibilidade de pesquisar fraudes que ocorreram no passado.
+:memo: Possibility to search for past frauds.
 
-:memo: Implementar autenticação e controle de acesso para garantir a segurança dos usuários. 
+:memo: Implement authentication and access control to ensure user security.
 
-:memo: Adicionar suporte a diferentes tipos de fontes de dados para a detecção de fraudes, como feeds de redes sociais, dados de transações financeiras adicionais, etc.
+:memo: Add support for different types of data sources for fraud detection, such as social media feeds, additional financial transaction data, etc.
 
-:memo: Integrar a aplicação com serviços de notificação por e-mail ou mensagens para alertar os usuários sobre atividades suspeitas.
+:memo: Integrate the application with email or messaging notification services to alert users of suspicious activities.
 
-:memo: Implementar um sistema de feedback dos usuários para coletar sugestões e melhorar continuamente a aplicação.
+:memo: Implement a user feedback system to collect suggestions and continuously improve the application.
 
-:memo: Realizar testes rigorosos de desempenho para garantir que a aplicação possa lidar com grandes volumes de dados de forma eficiente.
+:memo: Perform rigorous performance testing to ensure the application can handle large volumes of data efficiently.
 
-:memo: Integrar a aplicação com sistemas de terceiros, como bancos de dados, para obter informações adicionais para análise de fraudes.
+:memo: Integrate the application with third-party systems, such as databases, to obtain additional information for fraud analysis.
 
-## Desenvolvedores
+## Developers
 
 | [<img src="https://github.com/enzodpaiva.png?size=460u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Enzo Paiva</sub>](https://github.com/enzodpaiva) |  [<img src="https://github.com/AlexandreSh.png?size=460&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Alexandre Shimizu</sub>](https://github.com/AlexandreSh) |  [<img src="https://github.com/edu010101.png?size=460&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Eduardo Lopes</sub>](https://github.com/edu010101) | [<img src="https://github.com/TuskNinja.png?size=460&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Vitor Yuske</sub>](https://github.com/TuskNinja) |
 | :---: | :---: | :---: | :---: |
